@@ -18,7 +18,7 @@ var globals = {}
 colors.setTheme(
   { silly: 'rainbow'
   , input: 'grey'
-  , verbose: 'green'
+  , verbose: 'grey'
   , prompt: 'grey'
   , info: 'cyan'
   , data: 'grey'
