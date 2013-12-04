@@ -47,7 +47,7 @@ Console.prototype.onLog = function (logger, level, arguments) {
     return m
   }).join(' ')
   msg = msg[rlevels[level]] || msg
-  msg = '['+logger.name.cyan + '] - '+msg 
+  msg = '['+logger.name.blue + '] - '+msg 
   process.stdout.write(msg+'\n')
 }
 
