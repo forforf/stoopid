@@ -47,6 +47,7 @@ Console.prototype.onLog = function (logger, level, arguments) {
     var newLines = m.split('\n')
     if (newLines.length > maxNewlines ){
       truncNewlines = newLines.slice(0, maxNewlines)
+      truncNewlines.push('--- truncated ---')
       m = truncNewlines.join('\n')
     }
     return m
