@@ -13,6 +13,7 @@ var globals = {}
     , error: 500
     }
   , rlevels = {}
+  , maxNewlines = 20
   ;
 
 colors.setTheme(
@@ -43,7 +44,11 @@ Console.prototype.onLog = function (logger, level, arguments) {
   if (level < this.filter) return
   var msg = arguments.map(function (a) {
     var m = self.msg(a)
-    if (m.split('\n').length > 10) return '[object Object]'
+    var newLines = m.split('\n')
+    if (newLines.length > maxNewlines ){
+      truncNewlines = newLines.slice(0, maxNewlines)
+      m = truncNewlines.join('\n')
+    }
     return m
   }).join(' ')
   msg = msg[rlevels[level]] || msg
