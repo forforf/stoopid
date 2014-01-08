@@ -149,6 +149,18 @@ Logger.prototype.addHandler = function (handler, options) {
   this.handlers.push(handler)
 }
 
+Logger.prototype.filterAll = function(filter){
+  var filterVal
+  this.handlers.forEach(function(handler){
+    if (typeof filter === 'string'){
+      filterVal = levels[filter] || -1
+    } else {
+      filterVal = parseInt(filter)
+    }
+    handler.filter = filterVal
+  })
+}
+
 module.exports = new Logger('process')
 module.exports.addHandler('console')
 module.exports.enableLogref = function () {
