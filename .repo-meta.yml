@@ -1,0 +1,12 @@
+progress:
+  stable: 
+    roadmap: TBD
+ratings: 
+  stable: 8
+  useful: 8
+  caliber: 6
+  tidy: 4
+  tended: 8
+  tests: 6
+  unique: 4
+comment: caliber and tidiness are due to my hacks, not the underlying code by mikeal
